@@ -3,17 +3,15 @@ package scramble;
 
 import java.util.Arrays;
 
-public class Main {
+public class Scramble {
 	
 	private static String[] denied = {"?",",",".","!","-",";"};	
 	
-	private static String[] nums = {"0","1","2","3","4","5","6","7","8","9"};
-	
-	private static String simpleText = "The highway provides a route across several spurs of the Peninsular Ranges, linking the Los Angeles Basin with the Pomona Valley and San Gabriel Valley.";
+	private static String sampleText = "The highway provides a route 1234 across several spurs of the Peninsular Ranges, linking the Los Angeles Basin with the Pomona Valley and San Gabriel Valley.";
 	
 	public static void main ( String [] arguments )
 	{
-	    System.out.println(scramble(simpleText));
+	    System.out.println(scramble(sampleText));
 	}
 	
 	public static String scramble(String text)
@@ -25,11 +23,10 @@ public class Main {
 		String last = "";
 		String mark = "";
 		String out = "";
-		
 		while (i < splitText.length) {
 			word = splitText[i].split("");
 			first = word[0];
-			if (splitText[i].length() > 3 && !(isNum(first))) {								
+			if (splitText[i].length() > 3 && !isNum((first))) {								
 				last = word[word.length-1];
 				if (check(last)) {
 					mark = last;
@@ -99,16 +96,14 @@ public class Main {
 	
 	public static boolean isNum(String input)
 	{
-		boolean find = false;		
-		int i = 0;
-		
-		while (i < nums.length) {
-			if (nums[i].equals(input)) {
-				find = true;
-				break;
-			}
-			i++;
+		try
+		{
+			double d = Double.parseDouble(input);
+		} catch(NumberFormatException nfe)
+		{
+			return false;
 		}
-		return find;
+		return true;
+
 	}
 }

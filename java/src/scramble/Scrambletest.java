@@ -5,9 +5,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class MainTest {
+public class Scrambletest {
 	
-	Main tester = new Main();
+	Scramble tester = new Scramble();
 	
 	@Test
 	public void testScramble() 
