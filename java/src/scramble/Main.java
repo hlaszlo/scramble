@@ -3,7 +3,7 @@ package scramble;
 
 import java.util.Arrays;
 
-public class main {
+public class Main {
 	
 	private static String[] denied = {"?",",",".","!","-",";"};	
 	
