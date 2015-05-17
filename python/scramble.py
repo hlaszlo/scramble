@@ -1,11 +1,10 @@
 #Hornyak Laszlo
-testText = "The highway provides a route across several spurs of the Peninsular Ranges, linking the Los Angeles Basin with the Pomona Valley and San Gabriel Valley."
 
 def scramble(text):
 
     """
-    >>> scramble("highway")
-    hawhgiy
+    >>> scramble("The highway provides a route across several spurs of the Peninsular Ranges, linking the Los Angeles Basin with the Pomona Valley and San Gabriel Valley.")
+    'The hawhgiy pedivors a rtuoe asorcs sarevel srups of the Palusniner Regnas, lniknig the Los Aelegns Bisan wtih the Pnomoa Vellay and San Geirbal Vellay.'
     """
         
     words = text.split()
@@ -34,16 +33,6 @@ def scramble(text):
             newText += word+mark+" "
     return newText[0:len(newText)-1]
 
-print("Original text:")
-print(testText)
-print(" ")
-print("Result:")
-print(scramble(testText))
-print(" ")
-print("Unit test:")
-
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
-
-raw_input()
